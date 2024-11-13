@@ -1,0 +1,32 @@
+# Node dependencies
+node_modules/
+
+# Log files
+logs/
+*.log
+npm-debug.log*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Build directories
+dist/
+build/
+
+# Environment variables
+.env
+
+# IDE and editor settings
+.vscode/
+.idea/
+*.swp
+
+# Temporary files
+temp/
+*.tmp
+*.bak
+*.swp
+
+# Ignore local static files for testing
+/static/
