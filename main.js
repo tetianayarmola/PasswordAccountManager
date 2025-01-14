@@ -7,7 +7,7 @@ function generate(){
     const symbols = document.getElementById("symbols").checked;
     const no_duplicates = document.getElementById("no_duplicates").checked;
     //generate a random password
-    const password = passwordGenerator(parseInt(length), numbers, lowercase, uppercase, symbols, no_duplicates);
+    const password = handlePasswordGenerator(parseInt(length), numbers, lowercase, uppercase, symbols, no_duplicates);
     
     //display the pasword
     document.getElementById('output').textContent = password;
@@ -28,7 +28,7 @@ function PasswordVisibility(){
 
 //creting a function to generate a random password
 
-function passwordGenerator(length, numbers, lowercase, uppercase, symbols, no_duplicates){
+function handlePasswordGenerator(length, numbers, lowercase, uppercase, symbols, no_duplicates){
     
     //create a variable to hold characters set
     let charSet = '';
