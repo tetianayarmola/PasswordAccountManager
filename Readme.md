@@ -11,3 +11,7 @@ https://www.geeksforgeeks.org/how-to-create-a-horizontal-navigation-bar-in-html-
 
 https://www.w3schools.com/css/css_navbar_horizontal.asp
 https://www.w3schools.com/CSS/css_selectors.asp
+
+how to write content to JSON: https://www.w3schools.io/file/json-javascript/
+
+

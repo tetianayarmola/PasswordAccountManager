@@ -35,6 +35,12 @@ function handlePasswordGenerator(length, numbers, lowercase, uppercase, symbols,
     //set max characters length variable
     let maxLength = 0;
 
+    //handle negative length input
+    while (length < 1)
+    {
+        return `Password length must be a positive number. Please, try again.`;
+    }
+
     //if numbers are allowed
     if(numbers){
         charSet += '0123456789'; //adds set of numbers
