@@ -1,51 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PasswordManager</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>PasswordManager</title>
+    </head>
 
-<header>
-    <h1>Password Manager</h1>
-</header>
+    <body>
+        <header>
+            <h1>Password Manager</h1>
+        </header>
 
-<!-- The password form starts-->
-<form id="password_form"> 
-    <label for="length">Password Length:</label><br>
-    <input type="number" id="length" name="length" value="12"><br>
-    <input type="checkbox" id="numbers" name="numbers" checked>
-    <label for="numbers">Numbers</label><br>
+        <!-- The password form starts-->
+        <section class="container">
+            <form id="password_form"> 
+                <h2>New Random Password</h2>
+                <label for="length">Password Length:</label><br>
+                <input type="number" id="length" name="length" value="12"><br>
+                <input type="checkbox" id="numbers" name="numbers" checked>
+                <label for="numbers">Numbers</label><br>
 
-    <input type="checkbox" id="uppercase" name="uppercase" checked>
-    <label for="uppercase">Uppercase Characters</label><br>
+                <input type="checkbox" id="uppercase" name="uppercase" checked>
+                <label for="uppercase">Uppercase Characters</label><br>
 
-    <input type="checkbox" id="lowercase" name="lowercase" checked>
-    <label for="lowercase">Lowercase Characters</label><br>
+                <input type="checkbox" id="lowercase" name="lowercase" checked>
+                <label for="lowercase">Lowercase Characters</label><br>
 
-    <input type="checkbox" id="symbols" name="symbols" checked>
-    <label for="symbols">Symbols</label><br>
+                <input type="checkbox" id="symbols" name="symbols" checked>
+                <label for="symbols">Symbols</label><br>
 
-    <input type="checkbox" id="no_duplicates" name="no_duplicates" checked>
-    <label for="no_duplicates">No Duplicates</label><br>
+                <input type="checkbox" id="no_duplicates" name="no_duplicates" checked>
+                <label for="no_duplicates">No Duplicates</label><br>
 
-    <button type="button" onclick="generate()">generate Password</button>
-</form>
-<br>
-<!-- The password form ends-->
+                <button class="btn" type="button" onclick="generate()">Generate Password</button>
+                <br>    
+                <!-- password output field -->
+                <p>New Password: <span id="output"></p>
+                
+                <!-- password visibility toggler -->
+                <input type = "checkbox" onclick="PasswordVisibility()">Show Password
+            </form>
+            <!-- The password form ends-->
+            
+        </section>   
 
-
-
-<body>
-    
-
-    <script src="main.js"></script>  
-    <!-- password output field -->
-    <p>New Password: <span id="output"></p>
-    
-    <!-- password visibility toggler -->
-    <input type = "checkbox" onclick="PasswordVisibility()">Show Password
-
- 
-</body>
+        <script src="main.js"></script>  
+    </body>
 </html>
