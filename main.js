@@ -1,14 +1,57 @@
 const passwordForm = document.querySelector('#password_form');
-var input_error = false;
+const nameInput = document.querySelector('#name');
+const usernameInput = document.querySelector('#username');
+const urlInput = document.querySelector('#url_input');
+const passwordInput = document.querySelector('#new_password_by_user');
+const message = document.querySelector('.msg');
+const passwordsList = document.querySelector('#passwords');
+//const passwordsList = document.getElementById('passwords');
 
-function getFormCredentials(){
-    const name = document.querySelector('#name').value;
-    const username = document.querySelector('#username').value;
-    const url = document.querySelector('#url_input').value;
-    const password_value = document.querySelector('#new_password_by_user').value;
+const saveBtn = document.querySelector('#saveButton');
+
+
+// tell the saveButton to listen for the event
+//('event we listen to', function)
+saveBtn.addEventListener('click', onSave);
+
+function onSave(event) {
+    //prevent default so it works once
+    event.preventDefault();
+    //making sure all requires fields are filled out
+    if(nameInput.value === '' || usernameInput.value === ''|| passwordInput.value === '') {
+        //alert('Please, enter all required fields.');
+        //add error styling and class to message
+        message.classList.add('error');
+        message.innerHTML = 'Please, enter all required fields';
+        //remove error message after 3 seconds
+        setTimeout(() => message.remove(), 3000);
+    
+    } else{
+        console.log('success');
+        console.log(passwordsList);
+        //create list item from nothing, insert to the DOM
+        const li = document.createElement('li');
+        //add text node inside the li (list) element with the name value
+        // ` ` is a template literal (template string)
+        li.appendChild(document.createTextNode(`${nameInput.value} : ${usernameInput.value} : ${urlInput.value} : ${passwordInput.value}`));
+        //append li to ul (which was set to variable passwordsList previously)
+        passwordsList.appendChild(li);
+
+        // clear all fields
+        nameInput.value = '';
+        usernameInput.value = '';
+        urlInput.value = 'https://';
+        passwordInput.value = '';
+    }
 }
 
 
+
+
+
+
+
+var input_error = false;
 
 function generate(){
     
@@ -22,7 +65,7 @@ function generate(){
     //generate a random password
     const password = handlePasswordGenerator(parseInt(length), numbers, lowercase, uppercase, symbols, no_duplicates);
     
-    //display the pasword
+    //display the password
     document.querySelector('#output').textContent = password;
     if (!input_error){
         document.querySelector('#new_password_by_user').value = password;
@@ -42,9 +85,7 @@ function PasswordVisibility(){
     }
 }
 
-
 //creting a function to generate a random password
-
 function handlePasswordGenerator(length, numbers, lowercase, uppercase, symbols, no_duplicates){
     input_error = false;
     //create a variable to hold characters set
@@ -53,10 +94,13 @@ function handlePasswordGenerator(length, numbers, lowercase, uppercase, symbols,
     let maxLength = 0;
 
     //handle negative length input
-    while (length < 1)
+    if (length < 1)
     {
         input_error = true;
-        return `Password length must be a positive number. Please, try again.`;
+        message.classList.add('error');
+        message.innerHTML = 'Password length must be a positive number. Please, try again';
+        
+        return;
     }
 
     //if numbers are allowed
@@ -83,10 +127,10 @@ function handlePasswordGenerator(length, numbers, lowercase, uppercase, symbols,
     //check if the length input by user does not exceed maxLength, so it won't generate duplicates
     if (no_duplicates && length > maxLength){
         input_error = true;
-        return `Password length must be less than ${maxLength} characters. Please, try again.`;
+        message.classList.add('error');
+        message.innerHTML = 'Password length must be less than ' + maxLength.toString() + ' characters. Please, try again.';
+        return;
     }
-
-
     //creating an empty array to hold each char of the password
     let passwordArray = [];
 

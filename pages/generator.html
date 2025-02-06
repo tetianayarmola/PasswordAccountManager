@@ -35,6 +35,8 @@
         <section class="container">
             <form id="password_form"> 
                 <h1>Add New Password</h1>
+                <!-- Empty div for message class-->
+                <div class="msg"></div>
                 <div>
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name">
@@ -84,8 +86,14 @@
                 <div>
                     <label for="new_password_by_user">Password:</label>
                     <input type="text" id="new_password_by_user" name="new_password_by_user">
+                </div>
+                <div>
+                    <button class="btn" type="save" id="saveButton">Save</button>
                 </div>   
             </form>
+
+            <ul id="passwords"></ul>
+            
             <!-- The password form ends-->
             
         </section>   
