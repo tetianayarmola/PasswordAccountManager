@@ -10,6 +10,23 @@ const passwordsList = document.querySelector('#passwords');
 const saveBtn = document.querySelector('#saveButton');
 
 
+//Creating JSON data
+//Defining object literal:
+function credentialsToJSON(name, username, url, password) {
+    const objectCredentials = {
+        name: name,
+        username: username,
+        url: url,
+        password: password
+    };
+    //convert object to JSON tring
+    const jsonString = JSON.stringify(objectCredentials);
+    return jsonString;
+}
+
+
+
+
 // tell the saveButton to listen for the event
 //('event we listen to', function)
 saveBtn.addEventListener('click', onSave);
@@ -27,6 +44,8 @@ function onSave(event) {
         setTimeout(() => message.remove(), 3000);
     
     } else{
+        newJsonString = credentialsToJSON(nameInput.value, usernameInput.value, urlInput.value, passwordInput.value);
+        console.log(newJsonString);
         console.log('success');
         console.log(passwordsList);
         //create list item from nothing, insert to the DOM
@@ -45,13 +64,6 @@ function onSave(event) {
     }
 }
 
-
-
-
-
-
-
-var input_error = false;
 
 function generate(){
     

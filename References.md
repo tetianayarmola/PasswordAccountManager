@@ -18,3 +18,27 @@ https://www.geeksforgeeks.org/how-to-add-event-listener-to-button-in-javascript/
 notes for next time: fix the error message functionality so it appears again on the DOM without refreshing the page.
 
 get element by id from another html DOM page: https://www.sitepoint.com/community/t/document-getelementbyid-on-different-html-page/355998
+
+notes for the next time: ways to store data (locally in user's browser(local storage), using backend(node.js, php, python connected to the database) and send request from front end using fetchAPI or AJAX).
+validate JSON webtool: https://jsonlint.com/
+
+
+10/02: sending http request: https://www.w3schools.com/xml/xml_http.asp
+
+12/02: SPA routing using hash and history API: https://dev.to/dhruvangg/a-routing-system-in-javascript-for-single-page-application-1k42
+
+https://jsquicktips.com/building-single-page-applications-with-vanilla-javascript/
+
+using AJAX and jQueryto get content from other pages: https://stackoverflow.com/questions/32938168/using-innerhtml-property-to-display-content-of-another-html-file
+
+usage of iframes and its benefits: https://dev.to/joanayebola/what-is-iframe-and-how-to-use-them-1c63
+
+JSON file: https://www.w3schools.io/file/json-javascript/
+https://www.geeksforgeeks.org/how-to-create-and-manipulatinag-json-data-in-javascript/
+
+https://stackoverflow.com/questions/50110267/write-to-json-file-without-node-js
+
+using browser local storage: https://www.geeksforgeeks.org/how-to-save-data-in-local-storage-in-javascript/
+
+
+

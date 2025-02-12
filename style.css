@@ -15,6 +15,12 @@
     padding: 1rem;
     text-align: center;
   }
+
+  header {
+    background: #f4f4f4;
+    padding: 1rem;
+    text-align: center;
+  }
   
   .container {
     margin: auto;
@@ -58,7 +64,23 @@
     background-color: #444;
   }
 
+  #global-header {
+    background: #333;
+    padding: 1rem;
+    color: #fff;
+    text-align: center;
+  }
   
+
+  #iframeHTML
+  {
+    border: none;
+    border-style: none;
+    width: 100vw;
+    height: 150vh;
+
+  }
+
   #password_form {
     padding: 2rem;
     background: #f4f4f4;
