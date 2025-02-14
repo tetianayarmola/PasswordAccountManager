@@ -40,5 +40,12 @@ https://stackoverflow.com/questions/50110267/write-to-json-file-without-node-js
 
 using browser local storage: https://www.geeksforgeeks.org/how-to-save-data-in-local-storage-in-javascript/
 
+14/02: 
+
+JS tutorials: https://www.geeksforgeeks.org/javascript/?ref=outind
+
+get copyright notice with current year (answer 43): https://stackoverflow.com/questions/4562587/shortest-way-to-print-current-year-in-a-website
+
+
 
 
