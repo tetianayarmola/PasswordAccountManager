@@ -6,7 +6,7 @@ class Router {
     }
     init() {
         window.addEventListener("hashchange", () => this.handleRouteChange());
-        this.hadleRouteChange();
+        this.handleRouteChange();
     }
     handleRouteChange() {
         const currentPath = window.location.hash.slice(1);
