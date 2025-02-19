@@ -16,10 +16,11 @@
     text-align: center;
   }
 
-  header {
+  .footer {
+    width: 100%;
     background: #f4f4f4;
-    padding: 1rem;
     text-align: center;
+    display: flex;
   }
   
   .container {

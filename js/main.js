@@ -27,6 +27,49 @@ function credentialsToJSON(name, username, url, password) {
 
 
 
+
+
+//IndexedDB section - START
+const IDB = (function init() {
+    let db = null; //database object variable
+    let objectStore = null; //stores - objects created inside the database
+    //open the database request(if named database does not exist yet - it will create a new one)
+    //('database_name', optional_version_number)
+    let DBOpenRequest = indexedDB.open('PasswordsDB', 1);
+
+    DBOpenRequest.addEventListener('error', (err) => {
+        //error occured while opening DB
+        console.warn(err);
+    });
+    DBOpenRequest.addEventListener('success', (ev) => {
+        // DB is opened after upgradeneeded
+        db = ev.target.result;
+       console.log('success', db);
+    });
+    DBOpenRequest.addEventListener('upgradeneeded', (ev) => {
+        //when open this DB fo the first time
+        // OR new version was passed into open()
+        db = ev.target.result;
+        console.log('upgrade', db);
+    });
+
+    passwordForm.addEventListener('submit', (ev) => {
+        ev.preventDefault();
+        //one of the buttons was clicked on
+    });
+})();
+
+//IndexedDB section - END
+
+
+
+
+
+
+
+
+
+
 // tell the saveButton to listen for the event
 //('event we listen to', function)
 saveBtn.addEventListener('click', onSave);

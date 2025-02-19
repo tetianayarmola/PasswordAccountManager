@@ -46,6 +46,9 @@ JS tutorials: https://www.geeksforgeeks.org/javascript/?ref=outind
 
 get copyright notice with current year (answer 43): https://stackoverflow.com/questions/4562587/shortest-way-to-print-current-year-in-a-website
 
-
+19/02: dilema faced: local storage or indexed DB?
+https://medium.com/@sriweb/indexeddb-vs-localstorage-when-and-why-to-use-indexeddb-for-data-storage-in-web-applications-93a8a5a39eef
+https://www.youtube.com/watch?v=gb5ovg7YCig
+https://gist.github.com/prof3ssorSt3v3/fd08fa8175325c34e72160f081abf0d2
 
 
