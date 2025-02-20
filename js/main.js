@@ -8,12 +8,14 @@ const passwordsList = document.querySelector('#passwords');
 //const passwordsList = document.getElementById('passwords');
 
 const saveBtn = document.querySelector('#saveButton');
+const generateBtn = document.querySelector('#generateButton');
 
 
 //Creating JSON data
 //Defining object literal:
 function credentialsToJSON(name, username, url, password) {
     const objectCredentials = {
+        id: uid(),
         name: name,
         username: username,
         url: url,
@@ -23,51 +25,6 @@ function credentialsToJSON(name, username, url, password) {
     const jsonString = JSON.stringify(objectCredentials);
     return jsonString;
 }
-
-
-
-
-
-
-//IndexedDB section - START
-const IDB = (function init() {
-    let db = null; //database object variable
-    let objectStore = null; //stores - objects created inside the database
-    //open the database request(if named database does not exist yet - it will create a new one)
-    //('database_name', optional_version_number)
-    let DBOpenRequest = indexedDB.open('PasswordsDB', 1);
-
-    DBOpenRequest.addEventListener('error', (err) => {
-        //error occured while opening DB
-        console.warn(err);
-    });
-    DBOpenRequest.addEventListener('success', (ev) => {
-        // DB is opened after upgradeneeded
-        db = ev.target.result;
-       console.log('success', db);
-    });
-    DBOpenRequest.addEventListener('upgradeneeded', (ev) => {
-        //when open this DB fo the first time
-        // OR new version was passed into open()
-        db = ev.target.result;
-        console.log('upgrade', db);
-    });
-
-    passwordForm.addEventListener('submit', (ev) => {
-        ev.preventDefault();
-        //one of the buttons was clicked on
-    });
-})();
-
-//IndexedDB section - END
-
-
-
-
-
-
-
-
 
 
 // tell the saveButton to listen for the event
@@ -106,6 +63,29 @@ function onSave(event) {
         passwordInput.value = '';
     }
 }
+
+
+
+
+generateBtn.addEventListener('click', onGenerate);
+function onGenerate(event) {
+    event.preventDefault();
+    generate();
+}
+
+
+
+
+//this function generates random ID. Does not guarantee to be unique - not use in the production setting
+const uid = () => {
+    let t = Date.now().toString(36).toLocaleUpperCase();
+    let rand = parseInt(Math.random() * Number.MAX_SAFE_INTEGER);
+    rand = rand.toString(36).slice(0, 12).padStart(12, '0').toLocaleUpperCase();
+    return ''.concat(t, '-', rand);
+}
+
+
+
 
 
 function generate(){
