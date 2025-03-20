@@ -13,7 +13,7 @@ const generateBtn = document.querySelector('#generateButton');
 
 //Creating JSON data
 //Defining object literal:
-function credentialsToJSON(name, username, url, password) {
+function newCredential(name, username, url, password) {
     const objectCredentials = {
         id: uid(),
         name: name,
@@ -21,9 +21,7 @@ function credentialsToJSON(name, username, url, password) {
         url: url,
         password: password
     };
-    //convert object to JSON tring
-    const jsonString = JSON.stringify(objectCredentials);
-    return jsonString;
+    return objectCredentials; //return JS object
 }
 
 
@@ -44,8 +42,11 @@ function onSave(event) {
         setTimeout(() => message.remove(), 3000);
     
     } else{
-        newJsonString = credentialsToJSON(nameInput.value, usernameInput.value, urlInput.value, passwordInput.value);
-        console.log(newJsonString);
+        const userCredential = newCredential(nameInput.value, usernameInput.value, urlInput.value, passwordInput.value);
+        const key = userCredential.id;
+        const credentialJsonString = JSON.stringify(userCredential);
+        localStorage.setItem(key, credentialJsonString); 
+        console.log(credentialJsonString);
         console.log('success');
         console.log(passwordsList);
         //create list item from nothing, insert to the DOM
@@ -76,13 +77,9 @@ function onGenerate(event) {
 
 
 
-//this function generates random ID. Does not guarantee to be unique - not use in the production setting
-const uid = () => {
-    let t = Date.now().toString(36).toLocaleUpperCase();
-    let rand = parseInt(Math.random() * Number.MAX_SAFE_INTEGER);
-    rand = rand.toString(36).slice(0, 12).padStart(12, '0').toLocaleUpperCase();
-    return ''.concat(t, '-', rand);
-}
+//this built-in function generates random ID.
+const uid = () => crypto.randomUUID();
+
 
 
 

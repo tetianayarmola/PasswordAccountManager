@@ -52,3 +52,12 @@ https://www.youtube.com/watch?v=gb5ovg7YCig
 https://gist.github.com/prof3ssorSt3v3/fd08fa8175325c34e72160f081abf0d2
 
 
+20/03 local storage and JSON: https://fdzdev.medium.com/storing-accessing-and-displaying-json-data-in-local-storage-pe-d4ef8e509e31
+
+for further:
+- indexed DB???
+- create password search system
+- indicator of the password reliability
+- copyright on github
+- change page styles
+- home and about pages
