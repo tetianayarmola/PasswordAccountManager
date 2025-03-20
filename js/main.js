@@ -5,8 +5,6 @@ const urlInput = document.querySelector('#url_input');
 const passwordInput = document.querySelector('#new_password_by_user');
 const message = document.querySelector('.msg');
 const passwordsList = document.querySelector('#passwords');
-//const passwordsList = document.getElementById('passwords');
-
 const saveBtn = document.querySelector('#saveButton');
 const generateBtn = document.querySelector('#generateButton');
 
@@ -49,14 +47,7 @@ function onSave(event) {
         console.log(credentialJsonString);
         console.log('success');
         console.log(passwordsList);
-        //create list item from nothing, insert to the DOM
-        const li = document.createElement('li');
-        //add text node inside the li (list) element with the name value
-        // ` ` is a template literal (template string)
-        li.appendChild(document.createTextNode(`${nameInput.value} : ${usernameInput.value} : ${urlInput.value} : ${passwordInput.value}`));
-        //append li to ul (which was set to variable passwordsList previously)
-        passwordsList.appendChild(li);
-
+        //display success message here
         // clear all fields
         nameInput.value = '';
         usernameInput.value = '';
