@@ -71,7 +71,7 @@
     width: 100%;
     background-color: #f4f4f4;
     padding: 30px;
-    margin: 30px;
+    margin: 30px auto;
   }
   .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -152,6 +152,14 @@
     color: #fff;
     border-radius: 5px;
     margin: 5px 0;
+  }
+
+  #downloadBtn {
+
+    width: 50%;
+    display: block; 
+    margin: 0 auto;
+    padding: 12px;
   }
   
   .btn:hover {
