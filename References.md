@@ -69,5 +69,8 @@ for further:
 - add password encryption to store?
 - copyright on github
 - change page styles
+- checkboxes styling add
 - home and about pages
 - add a warning for delete buttons
+- optimise the code
+- add pretty pictures + uploaad and host on pages

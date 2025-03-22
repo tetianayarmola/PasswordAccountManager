@@ -22,10 +22,10 @@ class Router {
 //applying (using iframe tag to replace content of the page)
 const router = new Router(
     {   
-        "/": () => (document.getElementById("iframeHTML").src = "templates/home.html"),
-        "/about": () => (document.getElementById("iframeHTML").src = "templates/about.html"),
-        "/new-password": () => (document.getElementById("iframeHTML").src = "templates/generator.html"),
-        "/saved-passwords": () => (document.getElementById("iframeHTML").src = "templates/saved-passwords.html"),
+        "/": () => (document.getElementById("iframeHTML").src = "./templates/home.html"),
+        "/about": () => (document.getElementById("iframeHTML").src = "./templates/about.html"),
+        "/new-password": () => (document.getElementById("iframeHTML").src = "./templates/generator.html"),
+        "/saved-passwords": () => (document.getElementById("iframeHTML").src = "./templates/saved-passwords.html"),
         "/404": () => (document.getElementById("view").innerHTML = "Error 404: Page not found."),
     }
 );
