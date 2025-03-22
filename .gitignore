@@ -1,1 +1,10 @@
 References.md
+# User-specific settings
+.vscode/
+
+# OS files (optional)
+.DS_Store
+
+# Logs and environment files (add if applicable)
+*.log
+.env
