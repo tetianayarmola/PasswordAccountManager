@@ -56,11 +56,18 @@ https://gist.github.com/prof3ssorSt3v3/fd08fa8175325c34e72160f081abf0d2
 
 .card: https://www.w3schools.com/howto/howto_css_cards.asp
 
+
+22/03: add "delete password card by id (deletes element by id from local storage)
+https://www.codewithfaraz.com/content/365/create-interactive-addremove-cards-with-html-css-and-javascript
+
+to do: add a message that password is deleted(chheck the database also)
+
 for further:
 - indexed DB???
 - create password search system
 - indicator of the password reliability
-- add "delete password card by id (deletes element by id from local storage)
+- add password encryption to store?
 - copyright on github
 - change page styles
 - home and about pages
+- add a warning for delete buttons
