@@ -13,7 +13,6 @@ const generateBtn = document.querySelector('#generateButton');
 //Defining object literal:
 function newCredential(name, username, url, password) {
     const objectCredentials = {
-        id: uid(),
         name: name,
         username: username,
         url: url,
@@ -41,7 +40,7 @@ function onSave(event) {
     
     } else{
         const userCredential = newCredential(nameInput.value, usernameInput.value, urlInput.value, passwordInput.value);
-        const key = userCredential.id;
+        const key = uid();
         const credentialJsonString = JSON.stringify(userCredential);
         localStorage.setItem(key, credentialJsonString); 
         console.log(credentialJsonString);

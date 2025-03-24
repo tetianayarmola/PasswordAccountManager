@@ -23,7 +23,7 @@
     <strong>URL:</strong> ${storedCredential.url}<br>
     <strong>Password:</strong> ${storedCredential.password}`;
    //sets credential's ID for the card dataset 
-    ulDivCard.dataset.id = storedCredential.id; 
+    ulDivCard.dataset.id = key; 
     // Append
     ul.appendChild(li);
     ulDivCard.appendChild(ul);
