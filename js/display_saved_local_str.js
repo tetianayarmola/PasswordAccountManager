@@ -11,28 +11,27 @@
     const deleteBtn = document.createElement('button');
     deleteBtn.className= 'deleteBtn';
     deleteBtn.innerText = 'Delete';
-    deleteBtn.id = storedCredential.id;
     //add text node inside the li (list) element with the name value
     // ` ` is a template literal (template string)
     // Create divs for each piece of information
-    const ulDiv = document.createElement('div');
-    ulDiv.className = 'card';
-    ulDiv.className = 'card';
+    const ulDivCard = document.createElement('div');
+    ulDivCard.className = 'card';
+    ulDivCard.className = 'card';
     li.innerHTML = `<strong>ID:</strong> ${storedCredential.id}<br>
     <strong>Name:</strong> ${storedCredential.name}<br>
     <strong>Username:</strong> ${storedCredential.username}<br>
     <strong>URL:</strong> ${storedCredential.url}<br>
     <strong>Password:</strong> ${storedCredential.password}`;
-   //sets credential's ID for the card
-    ulDiv.dataset.id = storedCredential.id; 
+   //sets credential's ID for the card dataset 
+    ulDivCard.dataset.id = storedCredential.id; 
     // Append
     ul.appendChild(li);
-    ulDiv.appendChild(ul);
-    ulDiv.appendChild(deleteBtn);
+    ulDivCard.appendChild(ul);
+    ulDivCard.appendChild(deleteBtn);
     //append li to ul (which was set to variable passwordsList previously)
-    savedPasswordsList.appendChild(ulDiv);
+    savedPasswordsList.appendChild(ulDivCard);
    //add to each card Delete btn event listener
-    ulDiv.addEventListener('click', onDelete);
+    ulDivCard.addEventListener('click', onDelete);
     }
 
 
@@ -67,7 +66,7 @@ function onDelete(event) {
          parentEl.remove();
          return;
       }
-      //set btn parent element as a target
+      //set button's parent element as a target
       parentEl.style.viewTransitionName = 'target-card';
 		document.startViewTransition(() => {
 			parentEl.remove();

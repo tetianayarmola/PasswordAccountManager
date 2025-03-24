@@ -1,3 +1,6 @@
+Project: https://ty-passwordmanager.netlify.app/#/saved-passwords
+
+
 05/02 - Sprint meting - Basic styling and routing.concentrate on the Block Storsge to write and save to file before the next meeting.
 Source: https://vanillarouter.js.org/routing/create-a-router
 
@@ -60,10 +63,12 @@ https://gist.github.com/prof3ssorSt3v3/fd08fa8175325c34e72160f081abf0d2
 22/03: add "delete password card by id (deletes element by id from local storage)
 https://www.codewithfaraz.com/content/365/create-interactive-addremove-cards-with-html-css-and-javascript
 
-to do: add a message that password is deleted(chheck the database also)
+to do: add a check if local storage is empty before downloading a Blob. Also if there are no passwords: inner html should be "THere are no passwords added yet / No credentials/ Local Storage is empty";
+add limits to infinite passwords.
+- Also add (upload more passwords button)
 
 for further:
-- indexed DB???
+- indexed DB - delete
 - create password search system
 - indicator of the password reliability
 - add password encryption to store?
