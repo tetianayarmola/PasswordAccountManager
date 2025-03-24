@@ -11,14 +11,14 @@
     const deleteBtn = document.createElement('button');
     deleteBtn.className= 'deleteBtn';
     deleteBtn.innerText = 'Delete';
+
     //add text node inside the li (list) element with the name value
     // ` ` is a template literal (template string)
     // Create divs for each piece of information
     const ulDivCard = document.createElement('div');
     ulDivCard.className = 'card';
     ulDivCard.className = 'card';
-    li.innerHTML = `<strong>ID:</strong> ${storedCredential.id}<br>
-    <strong>Name:</strong> ${storedCredential.name}<br>
+    li.innerHTML = `<strong>Name:</strong> ${storedCredential.name}<br>
     <strong>Username:</strong> ${storedCredential.username}<br>
     <strong>URL:</strong> ${storedCredential.url}<br>
     <strong>Password:</strong> ${storedCredential.password}`;
