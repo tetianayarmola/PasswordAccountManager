@@ -4,7 +4,6 @@
  for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
     const storedCredential = JSON.parse(localStorage.getItem(key));
-    console.log(storedCredential);
     //create list item from nothing, insert to the DOM
     const ul = document.createElement('ul');
     const li = document.createElement('li');
