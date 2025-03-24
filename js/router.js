@@ -26,6 +26,7 @@ const router = new Router(
         "/about": () => (document.getElementById("iframeHTML").src = "./templates/about.html"),
         "/new-password": () => (document.getElementById("iframeHTML").src = "./templates/generator.html"),
         "/saved-passwords": () => (document.getElementById("iframeHTML").src = "./templates/saved-passwords.html"),
+        "/upload-passwords": () => (document.getElementById("iframeHTML").src = "./templates/upload-passwords.html"),
         "/404": () => (document.getElementById("view").innerHTML = "Error 404: Page not found."),
     }
 );
