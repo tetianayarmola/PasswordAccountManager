@@ -66,6 +66,7 @@ https://www.codewithfaraz.com/content/365/create-interactive-addremove-cards-wit
 to do: add a check if local storage is empty before downloading a Blob. Also if there are no passwords: inner html should be "THere are no passwords added yet / No credentials/ Local Storage is empty";
 add limits to infinite passwords.
 - Also add (upload more passwords button) https://gomakethings.com/how-to-upload-and-process-a-json-file-with-vanilla-js/
+- check if item in local storage exists already: https://bobbyhadz.com/blog/check-if-localstorage-key-exists-using-javascript
 
 for further:
 - if deleting a password, ask tthe user confirmation

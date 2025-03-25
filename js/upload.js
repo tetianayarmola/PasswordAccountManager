@@ -26,11 +26,20 @@ function logFile (event) {
     let string = event.target.result;
     let json = JSON.parse(string);
     console.log('from JSON File: ', json);
-    Object.entries(json).forEach(([id, data]) => {
-        //to do: check if credential already exists in Local storage
-        //localStorage.setItem(id, JSON.stringify(data));
-        console.log(id, JSON.stringify(data));
+    localStorageUpdateWith(json);
+}
+
+function localStorageUpdateWith (jsonData) {
+    Object.entries(jsonData).forEach(([id, data]) => {
+        //if not yet in local storage -> add
+        if (localStorage.getItem(id) === null)
+        {
+            localStorage.setItem(id, JSON.stringify(data));
+            console.log('Local storage added: ',id, JSON.stringify(data));
+        } 
+        else if ((localStorage.getItem(id) !== null)){
+            console.log('Already exists. Skipped the item: ', id, JSON.stringify(data));
+        }
     });
-    
-    
+    console.log('Local Storage has been updated.');
 }

@@ -40,25 +40,19 @@ function onDelete(event) {
    const parentEl = event.target.parentElement;
    const targetClass = event.target.classList;
    const id = event.target.parentElement.dataset.id;
-   let isDeleted = false;
    //check if deleteBtn was clicked
    if (targetClass.contains('deleteBtn')){
       //remove credential from local storage
       localStorage.removeItem(id);
-      isDeleted = true;
       //check that password was deleted
-      for (let i = 0; i < localStorage.length; i++) {
-         const key = localStorage.key(i);
-         const storedCredential = JSON.parse(localStorage.getItem(key));
-         if ((storedCredential.id === id)) {
-            console.log('Credential has not been deleted');
-            isDeleted = false;
-            break;
-         }
+      if (localStorage.getItem(id) !== null) {
+         console.log('Credential has not been deleted');
+         return;
       }
-      if (isDeleted){
-            console.log(`credential ${id} is deleted`);
+      else if (localStorage.getItem(id) == null){
+         console.log(`credential ${id} is deleted`);
       }
+   }
       //check if browser supports view transitions
       if(!document.startViewTransition){
          //just remove the card
@@ -71,4 +65,3 @@ function onDelete(event) {
 			parentEl.remove();
       });
    }
-}
