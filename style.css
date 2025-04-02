@@ -162,6 +162,15 @@
     padding: 12px;
   }
 
+  #generateButton {
+    background-color: #c7c7c7;
+    color: #333;
+  }
+
+  #generateButton:hover {
+    background: #dedede;
+  }
+
   #uploadBtn {
 
     width: 50%;

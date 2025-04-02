@@ -7,6 +7,21 @@ const message = document.querySelector('.msg');
 const passwordsList = document.querySelector('#passwords');
 const saveBtn = document.querySelector('#saveButton');
 const generateBtn = document.querySelector('#generateButton');
+const passwordStrength = document.querySelector('#password-strength');
+
+passwordForm.addEventListener('change', onPasswordChange);
+function onPasswordChange(event) {
+    //event.prventDefault();
+    if (!(passwordInput.value.trim().length == 0))
+    {
+        passwordStrength.textContent = checkPasswordStrength(passwordInput.value);
+        console.log(checkPasswordStrength(passwordInput.value));
+    }
+    else
+    {
+        passwordStrength.textContent = "";
+    }
+}
 
 
 //Creating JSON data
@@ -90,24 +105,12 @@ function generate(){
     //display the password
     document.querySelector('#output').textContent = password;
     if (!input_error){
-        document.querySelector('#new_password_by_user').value = password;
+        passwordInput.value = password;
     }
     
 }
 
-
-//hide the password visibility
-function PasswordVisibility(){
-    var item = document.querySelector('#output');
-    if (item.type === "password"){
-        item.type = "text";
-    }
-    else {
-        item.type = "password";
-    }
-}
-
-//creting a function to generate a random password
+//a function to generate a random password
 function handlePasswordGenerator(length, numbers, lowercase, uppercase, symbols, no_duplicates){
     input_error = false;
     //create a variable to hold characters set
@@ -169,4 +172,59 @@ function handlePasswordGenerator(length, numbers, lowercase, uppercase, symbols,
 
     //return joined random characters
     return passwordArray.join('');
+}
+
+
+//function to check strength of the password
+function checkPasswordStrength(password_string) {
+    const length = password_string.length;
+    let hasLower = false;
+    let hasUpper = false;
+    let hasDigit = false;
+    let hasSpecialChar = false;
+    const specialChars = "!@#$%^&*";
+    const normalChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+
+    for (let i = 0; i < length; i++) {
+        if (password_string[i] >= "a" && password_string[i] <= "z") 
+        {
+            hasLower = true;
+        }
+        if (password_string[i] >= "A" && password_string[i] <= "Z")
+        {
+            hasUpper = true;
+        }
+        if (password_string[i] >= "0" && password_string[i] <= "9")
+        {
+            hasDigit = true;
+        }
+        if (specialChars.includes(password_string[i]))
+        {
+            //other special characters
+            hasSpecialChar = true;
+        }
+    }
+
+    //indicate the strength
+    let strength = "";
+    if (length >= 8 && hasLower && hasUpper && hasDigit && hasSpecialChar)
+    {
+        strength = "Strong";
+    }
+    else if (length >= 8 && (hasLower || hasUpper) && hasSpecialChar) {
+        strength = "Moderate";
+    }
+    else 
+    {
+        strength = "Weak";
+    }
+    console.log({
+        length,
+        hasLower,
+        hasUpper,
+        hasDigit,
+        hasSpecialChar
+    });
+    
+    return strength;
 }

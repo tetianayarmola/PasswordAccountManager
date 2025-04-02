@@ -65,10 +65,19 @@ https://www.codewithfaraz.com/content/365/create-interactive-addremove-cards-wit
 
 to do: add a check if local storage is empty before downloading a Blob. Also if there are no passwords: inner html should be "THere are no passwords added yet / No credentials/ Local Storage is empty";
 add limits to infinite passwords.
-- Also add (upload more passwords button) https://gomakethings.com/how-to-upload-and-process-a-json-file-with-vanilla-js/
+25/03 Also add (upload more passwords button) https://gomakethings.com/how-to-upload-and-process-a-json-file-with-vanilla-js/
 - check if item in local storage exists already: https://bobbyhadz.com/blog/check-if-localstorage-key-exists-using-javascript
 
+26/03:
+- why not to use encrypion on  client side: https://code-boxx.com/simple-javascript-password-encryption-decryption/
+- https://www.geeksforgeeks.org/create-a-password-strength-checker-using-html-css-and-javascript/
+-https://www.geeksforgeeks.org/program-check-strength-password/?ref=next_article
+- https://programmingbasic.com/check-if-string-contains-only-spaces-javascript/
+
+
+
 for further:
+- add fields clearing on password form
 - if deleting a password, ask tthe user confirmation
 - copy to clipboard near the password link/usernames
 - create password search system

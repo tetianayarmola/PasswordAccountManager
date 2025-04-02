@@ -68,7 +68,13 @@
                 </div>
                 <div>
                     <label for="new_password_by_user">Password:</label>
-                    <input type="text" id="new_password_by_user" name="new_password_by_user">
+                    <input type="text" id="new_password_by_user" name="new_password_by_user" placeholder="Generate or type your password here">
+                </div>
+                <div class="indicator-container">
+                    <p>Password strength: <span id="password-strength"></p>
+                    <div id="indicator-point">
+
+                    </div>
                 </div>
                 <div>
                     <button class="btn" type="save" id="saveButton">Save</button>

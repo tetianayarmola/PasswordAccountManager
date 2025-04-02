@@ -40,6 +40,7 @@ function localStorageUpdateWith (jsonData) {
         else if ((localStorage.getItem(id) !== null)){
             console.log('Already exists. Skipped the item: ', id, JSON.stringify(data));
         }
+        else {console.log('Reading error.')}
     });
     console.log('Local Storage has been updated.');
 }
