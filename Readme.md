@@ -18,7 +18,7 @@ As a minimum the SPA provides the following functionality:
 
 Additional features:
 
--	Saved password cards vieving and deletion.
+-	Saved password cards viewing and deletion.
 
 
 
